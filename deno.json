@@ -1,0 +1,20 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-all --env --watch main.ts",
+    "test": "deno test --allow-all --env",
+    "run-tests": "deno task dev & sleep 5 && deno task test",
+    "deploy": "deployctl deploy --token=ddp_pybLtXGya3GD92IxHj7BZXljGs9iRx1716Vm --project=trabajo-final --env --prod ./main.ts"
+  },
+  "imports": {
+    "mongoose": "npm:mongoose@8.0.1",
+    "express": "npm:express@4.18.2"
+  },
+  "deploy": {
+    "project": "498f99e6-60b1-44cc-bf5b-a52bdd6a73ff",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
+  }
+}
